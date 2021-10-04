@@ -30,7 +30,7 @@ app.get("/api/config/paypal", (req, res) => {
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
-const port = process.env.PORT || 6301;
+const port = process.env.PORT || 6302;
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
