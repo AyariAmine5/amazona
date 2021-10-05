@@ -17,7 +17,6 @@ export default function SigninScreen(props) {
   const { userInfo, loading, error } = userSignin;
 
   const dispatch = useDispatch();
-
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(signin(email, password));
@@ -34,9 +33,9 @@ export default function SigninScreen(props) {
           <h1>Sign In</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
-        {error && <MessageBox variant="danger"> {error} </MessageBox>}
+        {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
-          <label htmlFor="email"> Email Address</label>
+          <label htmlFor="email">Email address</label>
           <input
             type="email"
             id="email"
@@ -46,7 +45,7 @@ export default function SigninScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="password"> Email Address</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -54,20 +53,20 @@ export default function SigninScreen(props) {
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-
-          <div>
-            <label></label>
-            <button className="primary" type="submit">
-              {" "}
-              Sign In
-            </button>
-          </div>
         </div>
         <div>
-          <label></label>
+          <label />
+          <button className="primary" type="submit">
+            Sign In
+          </button>
+        </div>
+        <div>
+          <label />
           <div>
-            New Customer?{" "}
-            <Link to={`/register?redirect=${redirect}`}>Create Account</Link>
+            New customer?{" "}
+            <Link to={`/register?redirect=${redirect}`}>
+              Create your account
+            </Link>
           </div>
         </div>
       </form>
